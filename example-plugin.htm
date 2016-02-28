@@ -1,0 +1,32 @@
+<html>
+<meta charset="utf-8">
+<head>
+	<title>Example plugin</title>
+</head>
+<body>
+	<h1>Test plug-in</h1>
+	<ul>
+		<li>List item</li>
+		<li>List item</li>
+		<li>List item</li>
+	</ul>
+	<!--[if lt IE 9]>
+	    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>    
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+	    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<!--<![endif]-->
+	<script src="example-plugin.js"></script>
+	<script>
+	$(function(){
+		// Example usage including demonstration of chaining ability
+		$("li:nth-child(1)").examplePlugin();
+		// Overriding defaults
+		$("li:nth-child(2)").examplePlugin({ "text" : "I've been overridden!", "color" : "black"});
+		// Chaining
+		$("li:nth-child(3)").examplePlugin().fadeTo(1000, 0.5);
+	})
+	</script>
+</body>
+</html>
